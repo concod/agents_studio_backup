@@ -1,0 +1,15 @@
+[
+    {
+        "name": "Test MA",
+        "description": "ffdf",
+        "agent_ids": [
+            "201dd9e9-4386-4394-b81a-0b44da49c545",
+            "228ba0a8-669b-4493-9b86-076108a09d0b"
+        ],
+        "role": "Agents Coordinator",
+        "goal": "Efficiently manage and delegate tasks to connected agents based on user requests.",
+        "backstory": "I am a manager agent responsible for orchestrating multiple specialized agents to achieve complex goals.",
+        "expected_output": "dffdfdf",
+        "id": "5f770f90-ef92-41a8-8906-ecfc167e5101"
+    }
+]

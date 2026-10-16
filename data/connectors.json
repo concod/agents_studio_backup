@@ -1,0 +1,13 @@
+[
+    {
+        "uniqueName": "Test DC",
+        "vectorStoreUser": "fdfdf",
+        "vectorStoreHost": "12.464.334",
+        "vectorStorePassword": "fdfd",
+        "vectorStorePort": "23232",
+        "vectorStoreDBName": "ffdfdfdf",
+        "connectorType": "postgres",
+        "id": "72834af5-2c2d-485c-a265-d638abcca4ec",
+        "createdAt": "2025-04-28T11:48:30.770330+00:00"
+    }
+]

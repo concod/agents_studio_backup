@@ -1,0 +1,495 @@
+{
+  "agent_bot_data": [
+    {
+      "session_id": "52b84bd5-f3db-4e04-abff-bf98b801e78a",
+      "timestamp": "2025-06-06T14:00:00+05:30",
+      "ip_address": "192.168.1.100",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+      "request_headers": {
+        "Content-Type": "application/json"
+      },
+      "user_input": "What is the weather today?",
+      "response": {
+        "status": "success",
+        "data": {
+          "temperature": "28\u00b0C",
+          "condition": "sunny"
+        }
+      },
+      "execution_time_seconds": 0.25,
+      "agent_id": "48840398-ad5e-4401-bef5-937763454771",
+      "agent_name": "agent_bot",
+      "endpoint": "/weather",
+      "method": "POST",
+      "execution_id": "exec-1234567890"
+    },
+    {
+      "session_id": "4524d6a1-eba1-4ce7-8963-c42af6bd3ab4",
+      "timestamp": "2025-06-06T14:05:00+05:30",
+      "ip_address": "192.168.1.101",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)",
+      "request_headers": {
+        "Content-Type": "application/json"
+      },
+      "user_input": "What is the capital of France?",
+      "response": {
+        "status": "success",
+        "data": {
+          "capital": "Paris"
+        }
+      },
+      "execution_time_seconds": 0.15,
+      "agent_id": "48840398-ad5e-4401-bef5-937763454771",
+      "agent_name": "agent_bot",
+      "endpoint": "/qa",
+      "method": "POST",
+      "execution_id": "exec-2345678901"
+    },
+    {
+      "session_id": "f273e34b-648c-4c75-8439-bb6607a0ef60",
+      "timestamp": "2025-06-06T14:10:00+05:30",
+      "ip_address": "192.168.1.102",
+      "user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X)",
+      "request_headers": {
+        "Content-Type": "application/json"
+      },
+      "user_input": "Convert USD to INR",
+      "response": {
+        "status": "success",
+        "data": {
+          "rate": 82.5
+        }
+      },
+      "execution_time_seconds": 0.35,
+      "agent_id": "48840398-ad5e-4401-bef5-937763454771",
+      "agent_name": "agent_bot",
+      "endpoint": "/currency",
+      "method": "POST",
+      "execution_id": "exec-3456789012"
+    },
+    {
+      "session_id": "6066cf21-9d4d-4f58-90a7-4c9b49f2d87d",
+      "timestamp": "2025-06-06T14:15:00+05:30",
+      "ip_address": "192.168.1.103",
+      "user_agent": "Mozilla/5.0 (Android 12; Mobile)",
+      "request_headers": {
+        "Content-Type": "application/json"
+      },
+      "user_input": "What is the time in New York?",
+      "response": {
+        "status": "success",
+        "data": {
+          "time": "04:25 AM"
+        }
+      },
+      "execution_time_seconds": 0.2,
+      "agent_id": "48840398-ad5e-4401-bef5-937763454771",
+      "agent_name": "agent_bot",
+      "endpoint": "/time",
+      "method": "POST",
+      "execution_id": "exec-4567890123"
+    },
+    {
+      "session_id": "8e2b2209-6da9-443f-a510-9a126a138627",
+      "timestamp": "2025-06-06T14:20:00+05:30",
+      "ip_address": "192.168.1.104",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+      "request_headers": {
+        "Content-Type": "application/json"
+      },
+      "user_input": "What is the population of India?",
+      "response": {
+        "status": "success",
+        "data": {
+          "population": "1.4 billion"
+        }
+      },
+      "execution_time_seconds": 0.22,
+      "agent_id": "48840398-ad5e-4401-bef5-937763454771",
+      "agent_name": "agent_bot",
+      "endpoint": "/population",
+      "method": "POST",
+      "execution_id": "exec-5678901234"
+    },
+    {
+      "session_id": "dbd2ef2c-4cd6-410b-bd1d-dd5b8e912bf6",
+      "timestamp": "2025-06-06T14:25:00+05:30",
+      "ip_address": "192.168.1.105",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)",
+      "request_headers": {
+        "Content-Type": "application/json"
+      },
+      "user_input": "What is the weather in London?",
+      "response": {
+        "status": "success",
+        "data": {
+          "temperature": "22\u00b0C",
+          "condition": "cloudy"
+        }
+      },
+      "execution_time_seconds": 0.28,
+      "agent_id": "48840398-ad5e-4401-bef5-937763454771",
+      "agent_name": "agent_bot",
+      "endpoint": "/weather",
+      "method": "POST",
+      "execution_id": "exec-6789012345"
+    },
+    {
+      "session_id": "65896620-b144-4045-b94b-15e373761d81",
+      "timestamp": "2025-06-06T14:30:00+05:30",
+      "ip_address": "192.168.1.106",
+      "user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X)",
+      "request_headers": {
+        "Content-Type": "application/json"
+      },
+      "user_input": "What is the capital of Germany?",
+      "response": {
+        "status": "success",
+        "data": {
+          "capital": "Berlin"
+        }
+      },
+      "execution_time_seconds": 0.18,
+      "agent_id": "48840398-ad5e-4401-bef5-937763454771",
+      "agent_name": "agent_bot",
+      "endpoint": "/qa",
+      "method": "POST",
+      "execution_id": "exec-7890123456"
+    },
+    {
+      "session_id": "5a481c1f-0470-45f1-88cd-9f5d7fe09d01",
+      "timestamp": "2025-06-06T14:35:00+05:30",
+      "ip_address": "192.168.1.107",
+      "user_agent": "Mozilla/5.0 (Android 12; Mobile)",
+      "request_headers": {
+        "Content-Type": "application/json"
+      },
+      "user_input": "What is the time in London?",
+      "response": {
+        "status": "success",
+        "data": {
+          "time": "10:45 AM"
+        }
+      },
+      "execution_time_seconds": 0.21,
+      "agent_id": "48840398-ad5e-4401-bef5-937763454771",
+      "agent_name": "agent_bot",
+      "endpoint": "/time",
+      "method": "POST",
+      "execution_id": "exec-8901234567"
+    },
+    {
+      "session_id": "47031ebd-e24f-46a8-8615-80d78df91b7b",
+      "timestamp": "2025-06-06T14:40:00+05:30",
+      "ip_address": "192.168.1.108",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+      "request_headers": {
+        "Content-Type": "application/json"
+      },
+      "user_input": "What is the population of USA?",
+      "response": {
+        "status": "success",
+        "data": {
+          "population": "331 million"
+        }
+      },
+      "execution_time_seconds": 0.23,
+      "agent_id": "48840398-ad5e-4401-bef5-937763454771",
+      "agent_name": "agent_bot",
+      "endpoint": "/population",
+      "method": "POST",
+      "execution_id": "exec-9012345678"
+    },
+    {
+      "session_id": "68ec4d00-1abb-4a01-b971-96906b670678",
+      "timestamp": "2025-06-06T14:45:00+05:30",
+      "ip_address": "192.168.1.109",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)",
+      "request_headers": {
+        "Content-Type": "application/json"
+      },
+      "user_input": "Convert EUR to USD",
+      "response": {
+        "status": "success",
+        "data": {
+          "rate": 1.1
+        }
+      },
+      "execution_time_seconds": 0.3,
+      "agent_id": "48840398-ad5e-4401-bef5-937763454771",
+      "agent_name": "agent_bot",
+      "endpoint": "/currency",
+      "method": "POST",
+      "execution_id": "exec-0123456789"
+    },
+    {
+      "session_id": "bb19a43b-2cf8-4b40-9d5b-d1987c6b84c7",
+      "timestamp": "2025-06-06T14:50:00+05:30",
+      "ip_address": "192.168.1.110",
+      "user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X)",
+      "request_headers": {
+        "Content-Type": "application/json"
+      },
+      "user_input": "What is the weather in Paris?",
+      "response": {
+        "status": "success",
+        "data": {
+          "temperature": "25\u00b0C",
+          "condition": "partly cloudy"
+        }
+      },
+      "execution_time_seconds": 0.26,
+      "agent_id": "6146ad3e-06bf-40f9-974a-f5a92523c710",
+      "agent_name": "agent_bot",
+      "endpoint": "/weather",
+      "method": "POST",
+      "execution_id": "exec-1234567890"
+    },
+    {
+      "session_id": "47650018-04a9-4a8e-91ed-5f2e886a5f36",
+      "timestamp": "2025-06-06T14:55:00+05:30",
+      "ip_address": "192.168.1.111",
+      "user_agent": "Mozilla/5.0 (Android 12; Mobile)",
+      "request_headers": {
+        "Content-Type": "application/json"
+      },
+      "user_input": "What is the time in Sydney?",
+      "response": {
+        "status": "success",
+        "data": {
+          "time": "18:25 PM"
+        }
+      },
+      "execution_time_seconds": 0.24,
+      "agent_id": "6e76339d-cc73-418a-8be6-c6140b2a5af4",
+      "agent_name": "agent_bot",
+      "endpoint": "/time",
+      "method": "POST",
+      "execution_id": "exec-2345678901"
+    },
+    {
+      "session_id": "e6c8c204-7bcf-4651-a4c4-c660d350ea95",
+      "timestamp": "2025-06-06T15:00:00+05:30",
+      "ip_address": "192.168.1.112",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+      "request_headers": {
+        "Content-Type": "application/json"
+      },
+      "user_input": "What is the population of China?",
+      "response": {
+        "status": "success",
+        "data": {
+          "population": "1.41 billion"
+        }
+      },
+      "execution_time_seconds": 0.27,
+      "agent_id": "9af8af40-f39b-49b4-9f25-e40b1a9ebf51",
+      "agent_name": "agent_bot",
+      "endpoint": "/population",
+      "method": "POST",
+      "execution_id": "exec-3456789012"
+    },
+    {
+      "session_id": "3cfbaadd-aae8-4bc3-8cd5-360575db89fa",
+      "timestamp": "2025-06-06T15:05:00+05:30",
+      "ip_address": "192.168.1.113",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)",
+      "request_headers": {
+        "Content-Type": "application/json"
+      },
+      "user_input": "Convert GBP to EUR",
+      "response": {
+        "status": "success",
+        "data": {
+          "rate": 1.15
+        }
+      },
+      "execution_time_seconds": 0.32,
+      "agent_id": "f0032de6-b5d0-4d02-a099-8058d3b5f958",
+      "agent_name": "agent_bot",
+      "endpoint": "/currency",
+      "method": "POST",
+      "execution_id": "exec-4567890123"
+    },
+    {
+      "session_id": "0383db85-987f-4120-905f-23d1fabdfb64",
+      "timestamp": "2025-06-06T15:10:00+05:30",
+      "ip_address": "192.168.1.114",
+      "user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X)",
+      "request_headers": {
+        "Content-Type": "application/json"
+      },
+      "user_input": "What is the weather in Tokyo?",
+      "response": {
+        "status": "success",
+        "data": {
+          "temperature": "27\u00b0C",
+          "condition": "rainy"
+        }
+      },
+      "execution_time_seconds": 0.29,
+      "agent_id": "5a4fda84-8e6d-4ad9-970c-d572d2e84903",
+      "agent_name": "agent_bot",
+      "endpoint": "/weather",
+      "method": "POST",
+      "execution_id": "exec-5678901234"
+    },
+    {
+      "session_id": "0ec78a8c-ca69-4cdc-a6a0-37a6c4db3ecc",
+      "timestamp": "2025-06-06T15:15:00+05:30",
+      "ip_address": "192.168.1.115",
+      "user_agent": "Mozilla/5.0 (Android 12; Mobile)",
+      "request_headers": {
+        "Content-Type": "application/json"
+      },
+      "user_input": "What is the time in Tokyo?",
+      "response": {
+        "status": "success",
+        "data": {
+          "time": "18:45 PM"
+        }
+      },
+      "execution_time_seconds": 0.22,
+      "agent_id": "a3b36c36-c0b7-4131-b65f-3ecc4adf9cfc",
+      "agent_name": "agent_bot",
+      "endpoint": "/time",
+      "method": "POST",
+      "execution_id": "exec-6789012345"
+    },
+    {
+      "session_id": "ef73c352-6800-4162-8044-75272265d2f6",
+      "timestamp": "2025-06-06T15:20:00+05:30",
+      "ip_address": "192.168.1.116",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+      "request_headers": {
+        "Content-Type": "application/json"
+      },
+      "user_input": "What is the population of Japan?",
+      "response": {
+        "status": "success",
+        "data": {
+          "population": "126 million"
+        }
+      },
+      "execution_time_seconds": 0.24,
+      "agent_id": "d4b28645-351b-4779-a3c9-6fa7b0af30d8",
+      "agent_name": "agent_bot",
+      "endpoint": "/population",
+      "method": "POST",
+      "execution_id": "exec-7890123456"
+    }
+  ],
+  "other_agents_data": [
+    {
+      "session_id": "f69e4746-c529-4587-af74-acc5c3f0bc1e",
+      "timestamp": "2025-06-06T15:25:00+05:30",
+      "ip_address": "192.168.1.117",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)",
+      "request_headers": {
+        "Content-Type": "application/json"
+      },
+      "user_input": "What is the weather in Berlin?",
+      "response": {
+        "status": "success",
+        "data": {
+          "temperature": "23\u00b0C",
+          "condition": "sunny"
+        }
+      },
+      "execution_time_seconds": 0.27,
+      "agent_id": "d0c40929-d778-4ced-9b3d-3d4885c1db95",
+      "agent_name": "weather_bot",
+      "endpoint": "/weather",
+      "method": "POST",
+      "execution_id": "exec-8901234567"
+    },
+    {
+      "session_id": "66bbb0f4-fb98-4ddb-8e21-4684e2a6336b",
+      "timestamp": "2025-06-06T15:30:00+05:30",
+      "ip_address": "192.168.1.118",
+      "user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X)",
+      "request_headers": {
+        "Content-Type": "application/json"
+      },
+      "user_input": "What is the capital of Italy?",
+      "response": {
+        "status": "success",
+        "data": {
+          "capital": "Rome"
+        }
+      },
+      "execution_time_seconds": 0.19,
+      "agent_id": "713b8f90-8ce7-4b6c-bc56-6214242ee4aa",
+      "agent_name": "knowledge_bot",
+      "endpoint": "/qa",
+      "method": "POST",
+      "execution_id": "exec-9012345678"
+    },
+    {
+      "session_id": "dbfbd761-4a63-4f7e-834c-91519ae4fe5f",
+      "timestamp": "2025-06-06T15:35:00+05:30",
+      "ip_address": "192.168.1.119",
+      "user_agent": "Mozilla/5.0 (Android 12; Mobile)",
+      "request_headers": {
+        "Content-Type": "application/json"
+      },
+      "user_input": "What is the time in Rome?",
+      "response": {
+        "status": "success",
+        "data": {
+          "time": "11:05 AM"
+        }
+      },
+      "execution_time_seconds": 0.23,
+      "agent_id": "696142c0-3f1e-4931-9676-14b4911145b4",
+      "agent_name": "time_bot",
+      "endpoint": "/time",
+      "method": "POST",
+      "execution_id": "exec-0123456789"
+    },
+    {
+      "session_id": "42842a0c-cf33-4762-b63e-789e3946bd61",
+      "timestamp": "2025-06-06T15:40:00+05:30",
+      "ip_address": "192.168.1.120",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+      "request_headers": {
+        "Content-Type": "application/json"
+      },
+      "user_input": "What is the population of Italy?",
+      "response": {
+        "status": "success",
+        "data": {
+          "population": "60 million"
+        }
+      },
+      "execution_time_seconds": 0.25,
+      "agent_id": "0fa5f4fc-0957-4e85-842d-d3989512b02e",
+      "agent_name": "population_bot",
+      "endpoint": "/population",
+      "method": "POST",
+      "execution_id": "exec-1234567890"
+    },
+    {
+      "session_id": "16adc28a-79c7-40ef-a1c0-1fdf4e1942f3",
+      "timestamp": "2025-06-06T15:45:00+05:30",
+      "ip_address": "192.168.1.121",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)",
+      "request_headers": {
+        "Content-Type": "application/json"
+      },
+      "user_input": "Convert GBP to JPY",
+      "response": {
+        "status": "success",
+        "data": {
+          "rate": 155.25
+        }
+      },
+      "execution_time_seconds": 0.31,
+      "agent_id": "7ab46dfc-64c5-4b5d-a6fb-61b4d627025b",
+      "agent_name": "currency_bot",
+      "endpoint": "/currency",
+      "method": "POST",
+      "execution_id": "exec-2345678901"
+    }
+  ]
+}
