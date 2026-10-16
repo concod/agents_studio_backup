@@ -1,0 +1,59 @@
+[
+  {
+    "id": "01601600-134f-4293-bbca-ce0128996e98",
+    "name": "Greet Teller",
+    "description": "It will derive the matched greet based on time.",
+    "tags": [
+      "A Greet fetching Tool"
+    ],
+    "is_added": false,
+    "data_connector_id": null,
+    "is_internal": false
+  },
+  {
+    "id": "885135ef-d2fd-4745-94db-5e04635c77f7",
+    "name": "Fill Emoji",
+    "description": "Add Emojis to te sentences.",
+    "tags": [
+      "An emoji tagger"
+    ],
+    "is_added": false,
+    "data_connector_id": null,
+    "is_internal": false
+  },
+  {
+    "id": "1c5a9fb4-7b88-416c-89be-9b865b872b34",
+    "name": "To-do planner",
+    "description": "A tool for planning the to-do list",
+    "tags": [
+      "Productivity"
+    ],
+    "is_added": false,
+    "data_connector_id": null,
+    "is_internal": false
+  },
+  {
+    "id": "83505e9b-fb50-42a0-9b70-235f0f1ca3c2",
+    "name": "Image Analyzer",
+    "description": "A tool for analyzing the image input.",
+    "tags": [
+      "CNN",
+      "LVM"
+    ],
+    "is_added": false,
+    "data_connector_id": null,
+    "is_internal": false
+  },
+  {
+    "id": "45fd4e0c-5ad5-42c6-98eb-1d54978c09ea",
+    "name": "test mac tool",
+    "description": "ddd",
+    "tags": [
+      "Custom",
+      "Mac"
+    ],
+    "is_added": false,
+    "data_connector_id": null,
+    "is_internal": false
+  }
+]

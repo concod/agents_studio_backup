@@ -1,0 +1,129 @@
+from crewai import Crew, Process, Task, Agent as CrewAgent
+from crewai import LLM
+from crewai.tools import OpenAPITools
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+class TaskExecutor:
+    def __init__(self, agent_config, tools_config=None):
+        """
+        Initialize the TaskExecutor with agent configuration and tools.
+        Args:
+            agent_config (dict): Configuration for creating a CrewAgent
+                Expected keys: role, goal, backstory, llm_provider, llm_model, api_key
+            tools_config (list): List of tool configurations with schemas and auth info
+        """
+        # Initialize LLM based on provider
+        # llm = LLM(
+        #     model=f"{agent_config['llm_provider']}/{agent_config['llm_model']}",
+        #     api_key=agent_config['api_key']
+        # )
+
+
+
+        API_KEYS = {
+            "gemini": os.getenv("GEMINI_API_KEY"),
+            "openai": os.getenv("OPENAI_API_KEY"),
+            "groq": os.getenv("GROQ_API_KEY"),
+        }
+
+        # Import CrewAgent here only when needed
+        llm = LLM(model="gemini/gemini-2.5-flash", api_key=API_KEYS["gemini"])
+
+        
+        
+        # Initialize tools if provided
+        tools = []
+        if tools_config:
+            for tool_config in tools_config:
+                headers = {}
+                params = {}
+                
+                # Handle auth if provided
+                if tool_config.get('auth'):
+                    auth = tool_config['auth']
+                    headers = auth.get('headers', {})
+                    params = auth.get('params', {})
+                
+                # Create OpenAPI tools
+                openapi_tools = OpenAPITools(
+                    spec=tool_config['schema'],
+                    headers=headers,
+                    params=params
+                )
+                tools.extend(openapi_tools)
+
+        # Create the CrewAgent
+        self.agent = CrewAgent(
+            role=agent_config['role'],
+            goal=agent_config['goal'],
+            backstory=agent_config['backstory'],
+            llm=llm,
+            tools=tools if tools else None
+        )
+
+    def get_task_descriptions(self, description, expected_output, task_name=None, **kwargs):
+        """
+        Process task description and expected output, replacing placeholders with kwargs.
+        Args:
+            description (str): The task description with optional {{placeholders}}.
+            expected_output (str): The expected output format or content.
+            task_name (str, optional): Name of the task (for future JSON lookup or logging).
+            **kwargs: Dynamic arguments to replace placeholders in the description.
+        Returns:
+            dict: Dictionary with processed description and expected_output.
+        """
+        if task_name:
+            try:
+                # Replace {{key}} placeholders dynamically based on kwargs
+                if kwargs:
+                    for key, value in kwargs.items():
+                        placeholder = "{{" + key + "}}"
+                        description = description.replace(placeholder, str(value))
+                return {"description": description, "expected_output": expected_output}
+            except Exception as e:
+                # Fallback to unformatted description if something goes wrong
+                print(f"Error processing task '{task_name}': {e}. Using provided description.")
+                return {"description": description, "expected_output": expected_output}
+        return {"description": description, "expected_output": expected_output}
+
+    def execute_task(self, description, expected_output, task_name=None, **kwargs):
+        """
+        Execute a task using the CrewAI framework.
+        Args:
+            description (str): The task description with optional {{placeholders}}.
+            expected_output (str): The expected output format or content.
+            task_name (str, optional): Name of the task for identification.
+            **kwargs: Dynamic arguments to replace placeholders in the description.
+        Returns:
+            str: The raw output from the task execution.
+        """
+        # Get processed task info
+        task_info = self.get_task_descriptions(description, expected_output, task_name, **kwargs)
+        processed_description = task_info["description"]
+        processed_expected_output = task_info["expected_output"]
+
+        # Create the task
+        task = Task(
+            description=processed_description,
+            expected_output=processed_expected_output,
+            agent=self.agent
+        )
+
+        # Set up and run the crew
+        crew = Crew(
+            agents=[self.agent],
+            tasks=[task],
+            process=Process.sequential
+        )
+        result = crew.kickoff()
+
+        # Extract and return the raw output
+        raw_output = result.tasks_output[0].raw.strip()
+        if task_name:
+            print(f"Raw LLM output for task '{task_name}': {raw_output}")
+        else:
+            print(f"Raw LLM output: {raw_output}")
+        return raw_output

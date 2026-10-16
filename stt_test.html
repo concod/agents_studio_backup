@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Browser STT Test</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      padding: 40px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    #status {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    #output {
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      min-height: 60px;
+      white-space: pre-wrap;
+      background: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Speech-to-Text (Browser)</h2>
+
+  <button id="startBtn">🎤 Start Listening</button>
+  <button id="stopBtn" disabled>⏹ Stop</button>
+
+  <div id="status">Status: Idle</div>
+  <div id="output"></div>
+
+  <script>
+    const SpeechRecognition =
+      window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    if (!SpeechRecognition) {
+      alert("Speech Recognition not supported in this browser. Use Chrome or Edge.");
+    }
+
+    const recognition = new SpeechRecognition();
+    recognition.lang = "en-US";
+    recognition.interimResults = false;
+    recognition.continuous = false;
+
+    const startBtn = document.getElementById("startBtn");
+    const stopBtn = document.getElementById("stopBtn");
+    const status = document.getElementById("status");
+    const output = document.getElementById("output");
+
+    startBtn.onclick = () => {
+      recognition.start();
+      status.textContent = "Status: Listening...";
+      startBtn.disabled = true;
+      stopBtn.disabled = false;
+    };
+
+    stopBtn.onclick = () => {
+      recognition.stop();
+      status.textContent = "Status: Stopped";
+      startBtn.disabled = false;
+      stopBtn.disabled = true;
+    };
+
+    recognition.onresult = (event) => {
+      const transcript = event.results[0][0].transcript;
+      output.textContent = transcript;
+
+      // 👇 This is what you send to backend
+      console.log("Final transcript:", transcript);
+    };
+
+    recognition.onerror = (event) => {
+      status.textContent = "Error: " + event.error;
+      startBtn.disabled = false;
+      stopBtn.disabled = true;
+    };
+
+    recognition.onend = () => {
+      status.textContent = "Status: Idle";
+      startBtn.disabled = false;
+      stopBtn.disabled = true;
+    };
+  </script>
+
+</body>
+</html>
