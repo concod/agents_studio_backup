@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Logs</title>
+    <!-- XLSX Library for Excel export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Material UI CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mui/3.2.0/css/mui.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/sessions.css">
+</head>
+<body>
+    <div class="main-header">
+        <div class="header-left">
+            <img src="/static/assets/ialogo.png" alt="IA Logo" class="header-logo">
+        </div>
+        <div class="header-right">
+            <div class="user-info" onclick="toggleDropdown()">
+                <span class="user-name" id="userName">User Name</span>
+                <img src="/static/assets/user.png" alt="User" class="user-picture user-logo">
+                <div class="email-tooltip" id="userEmail">user@example.com</div>
+                <div class="dropdown-menu" id="profileDropdown">
+                    <div class="dropdown-item" onclick="event.stopPropagation(); showProfile()">
+                        <i class="material-icons">logout</i>
+                        <span>Logout</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Toggle dropdown menu
+        function toggleDropdown() {
+            const userInfo = document.querySelector('.user-info');
+            userInfo.classList.toggle('show-dropdown');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const userInfo = document.querySelector('.user-info');
+            if (!userInfo.contains(event.target)) {
+                userInfo.classList.remove('show-dropdown');
+            }
+        });
+
+        // Handle logout
+        function showProfile() {
+            localStorage.removeItem('access_token');
+            window.location.href = '/sessions-logs';
+        }
+        // Load user details from localStorage
+        document.addEventListener('DOMContentLoaded', () => {
+            const userName = localStorage.getItem('user_name');
+            const userEmail = localStorage.getItem('user_email');
+            
+            if (userName) {
+                document.getElementById('userName').textContent = userName;
+            }
+            if (userEmail) {
+                document.getElementById('userEmail').textContent = userEmail;
+            }
+        });
+    </script>
+    <div class="container">
+        <div class="header">
+            <h1>Session Logs</h1>
+        </div>
+
+        <div id="loading" class="loading">
+            <div class="mui--text-headline">Loading session logs...</div>
+            <div class="mui--text-subhead">Please wait while we fetch your data</div>
+        </div>
+
+        <div id="error" class="error">
+            <i class="material-icons" style="vertical-align: middle; margin-right: 5px;">error</i>
+            <span>An error occurred while loading session logs.</span>
+        </div>
+
+        <div id="content" style="display: none;">
+            <div class="filters-container" style="margin-bottom: 20px; padding-left: 20px;">
+                <div style="display: flex; gap: 15px; flex-wrap: wrap; align-items: flex-end;">
+                    <div class="filter-group">
+                        <label for="searchInput" style="display: block; margin-bottom: 5px; font-weight: 500;">Search Session ID</label>
+                        <div class="mui-textfield" style="margin: 0;">
+                            <input type="text" id="searchInput" placeholder="Enter session ID..." style="padding: 8px 12px;">
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <label for="startDate" style="display: block; margin-bottom: 5px; font-weight: 500;">From Date</label>
+                        <div class="mui-textfield" style="margin: 0;">
+                            <input type="datetime-local" id="startDate" style="padding: 8px 12px;">
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <label for="endDate" style="display: block; margin-bottom: 5px; font-weight: 500;">To Date</label>
+                        <div class="mui-textfield" style="margin: 0;">
+                            <input type="datetime-local" id="endDate" style="padding: 8px 12px;">
+                        </div>
+                    </div>
+                    <div class="filter-group" style="display: flex; justify-content: space-between; width: 100%;">
+                        <div>
+                            <button id="applyFilters" class="mui-btn mui-btn--primary" style="margin-right: 10px;">
+                                <i class="material-icons" style="vertical-align: middle; margin-right: 5px;">search</i>
+                                Apply Filters
+                            </button>
+                            <button id="clearFilters" class="mui-btn mui-btn--flat" style="margin-right: 10px;">
+                                <i class="material-icons" style="vertical-align: middle; margin-right: 5px;">clear</i>
+                                Clear
+                            </button>
+                        </div>
+                        <div>
+                            <button id="exportLogs" class="mui-btn mui-btn--primary">
+                                <i class="material-icons" style="vertical-align: middle; margin-right: 5px;">file_download</i>
+                                Export Logs
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="sessionTable"></div>
+            <div id="pagination"></div>
+        </div>
+    </div>
+
+    <!-- Include the session.js file -->
+    <script>
+        // Load user details from localStorage
+        document.addEventListener('DOMContentLoaded', () => {
+            const userName = localStorage.getItem('user_name');
+            const userEmail = localStorage.getItem('user_email');
+            
+            if (userName) {
+                document.getElementById('userName').textContent = userName;
+            }
+            if (userEmail) {
+                document.getElementById('userEmail').textContent = userEmail;
+            }
+        });
+    </script>
+    <script src="/static/js/session.js"></script>
+    <div class="footer">
+        <p> 2025 Impact Analytics, Inc. All rights reserved</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Emoji API",
+    "version": "1.0.0",
+    "description": "An emoji setting API to the text."
+  },
+  "paths": {
+    "http://localhost:8003/process": {
+      "post": {
+        "summary": "Add emoji to the text",
+        "operationId": "emoji_text",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "text"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    }
+  }
+}

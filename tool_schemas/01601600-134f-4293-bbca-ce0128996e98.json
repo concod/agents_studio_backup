@@ -1,0 +1,52 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Greeting API",
+    "version": "1.0.0",
+    "description": "An API that returns a greeting message based on the time of day."
+  },
+  "paths": {
+    "http://localhost:8003/greet": {
+      "post": {
+        "summary": "Get a greeting message",
+        "operationId": "get_greeting",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "hour": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 23
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "greeting": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid hour parameter"
+          }
+        }
+      }
+    }
+  }
+}
